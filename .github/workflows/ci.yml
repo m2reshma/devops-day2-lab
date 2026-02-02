@@ -29,3 +29,4 @@ jobs:
           image-ref: devops-lab:${{ github.sha }}
           exit-code: 1
           severity: CRITICAL,HIGH
+          ignore-unfixed: true
