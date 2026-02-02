@@ -24,9 +24,10 @@ jobs:
         run: docker build -t devops-lab:${{ github.sha }} .
 
       - name: Scan image
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.20.0
         with:
           image-ref: devops-lab:${{ github.sha }}
+          format: table
           exit-code: 1
           severity: CRITICAL,HIGH
           ignore-unfixed: true
